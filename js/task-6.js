@@ -5,17 +5,17 @@ const boxList = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   destroyBoxes();
-  const allBoxList = document.createDocumentFragment();
+  const boxListFragment = document.createDocumentFragment();
 
   for (let i = 0; i < amount; i++) {
     const elem = document.createElement(`div`);
-    elem.class = `box`;
+    elem.className = `box`;
     elem.style.width = `${30 + (10 * i)}px`;
     elem.style.height = `${30 + (10 * i)}px`;
     elem.style.backgroundColor = getRandomHexColor();
-    allBoxList.appendChild(elem);
+    boxListFragment.appendChild(elem);
   }
-  boxList.appendChild(allBoxList);
+  boxList.appendChild(boxListFragment);
 }
 
 addButton.addEventListener('click', function() {
