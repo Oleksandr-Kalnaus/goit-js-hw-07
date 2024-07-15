@@ -5,6 +5,7 @@ const boxList = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   destroyBoxes();
+  const allBoxList = document.createDocumentFragment();
 
   for (let i = 0; i < amount; i++) {
     const elem = document.createElement(`div`);
@@ -12,8 +13,9 @@ function createBoxes(amount) {
     elem.style.width = `${30 + (10 * i)}px`;
     elem.style.height = `${30 + (10 * i)}px`;
     elem.style.backgroundColor = getRandomHexColor();
-    boxList.append(elem);
+    allBoxList.appendChild(elem);
   }
+  boxList.appendChild(allBoxList);
 }
 
 addButton.addEventListener('click', function() {
